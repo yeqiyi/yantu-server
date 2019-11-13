@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: lee
+    url: jdbc:sqlserver://106.54.95.234:1433;DatabaseName=YT
+    password: Zplcz1234567
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
