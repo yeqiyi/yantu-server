@@ -40,30 +40,10 @@ public class loggin {
             }
         }
     }
-    @RequestMapping("/verifycode")
-    public @ResponseBody Map<String,Object> verifycode(@RequestParam(value = "phone")String phone, HttpServletRequest request){
-        Map<String,Object>map =new HashMap<String, Object>();
-        boolean smsSucess=false;
-        try{
-            if(phone==null){
-                map.put("message","手机号不能为空");
-                map.put("result","error");
-                return map;
-            }
-
-            verifycode=RandomCodeUtil.getRandomNumber(6);
-            String msg="【研途】 您的短信验证码是："+verifycode+"  您正在进行用户验证操作，如非本人操作，请忽略该短信。";
-        }
-    }
     public String getToken(users user) {
         String token="";
         token= JWT.create().withAudience(user.getPhone())
                 .sign(Algorithm.HMAC256(user.getPassword()));
         return token;
-    }
-    @UserLoginToken
-    @GetMapping("/getmsg")
-    public String getMsg(){
-        return "通过验证";
     }
 }
