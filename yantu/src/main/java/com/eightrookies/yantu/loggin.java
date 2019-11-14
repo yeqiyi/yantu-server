@@ -17,8 +17,6 @@ import java.util.Map;
 public class loggin {
     @Autowired
     private accountRepository areposity;
-
-    private String verifycode;
     @PostMapping("/password")
     public Object login(@RequestParam(value = "phone") String phone, @RequestParam(value = "password")String password) throws JSONException {
         JSONObject jsonObject=new JSONObject();
