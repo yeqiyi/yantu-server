@@ -13,13 +13,10 @@ public class replys {
     private String date;
     @Column(name = "PN")
     private String pn;
-    @Column(name = "USERSNAME")
+    @Column(name = "USERNAME")
     private String name;
     @Column(name="TID")
     private Integer tid;
-    @Column(name = "PID")
-    private Integer pid;
-
     public replys() {
     }
 
@@ -63,11 +60,4 @@ public class replys {
         this.tid = tid;
     }
 
-    public Integer getPid() {
-        return pid;
-    }
-
-    public void setPid(Integer pid) {
-        this.pid = pid;
-    }
 }

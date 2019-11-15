@@ -7,8 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import javax.transaction.Transactional;
 
 @Transactional
-public interface PbRepository extends JpaRepository<postbar,Integer> {
+public interface ReplyRepository extends JpaRepository<replys,Integer> {
     @Modifying
-    @Query(nativeQuery = true,value = "insert into TIE(USERNAME,FN,TDATE) values (?1,?2,?3)")
-    public void addpost(String name,String content,String date);
+    @Query(nativeQuery = true,value = "insert into RES(USERNAME,PN,RTIME,TID) values (?1,?2,?3,?4)")
+    public void addreply(String name,String content,String time,Integer tid);
+
 }

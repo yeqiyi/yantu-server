@@ -8,8 +8,8 @@ import java.util.List;
 @Table(name = "TIE")
 public class postbar {
     @Id
-    @GeneratedValue
-
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "ID")
     private Integer id;
     @Column(name = "USERNAME")
     private String user_id;
@@ -19,10 +19,21 @@ public class postbar {
     private String content;
     @Column(name = "DZS")
     private Integer zan;
+    @Column(name = "PLS")
+    private Integer pl;
     @OneToMany(mappedBy = "tid",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<replys> replysList=new ArrayList<>();
 
+    public Integer getPl() {
+        return pl;
+    }
+
+    public void setPl(Integer pl) {
+        this.pl = pl;
+    }
+
     public List<replys> getReplysList() {
+
         return replysList;
     }
 
